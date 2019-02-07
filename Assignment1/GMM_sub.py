@@ -38,10 +38,10 @@ class GMM():
         self.alpha = alpha # learning rate 0.005
         self.std_init = std_init # initialise std matrix
         self.T = T #0.5
+        self.frames = frames
         self.height = frames[0].shape[0]
         self.width = frames[0].shape[1]
         self.channels = channels
-        self.frames = frames
         # self.foreground = np.zeros((height,width))
         self.W = (1/K)*np.ones((self.height, self.width, K)) # weights
         self.mu = np.random.randint(0,255,(self.height, self.width, channels, K)) # initialise pixel means [h,w,c,K]
